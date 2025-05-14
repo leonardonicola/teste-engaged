@@ -1,0 +1,70 @@
+$slate-50: #f8fafc;
+$slate-100: #f1f5f9;
+$slate-200: #e2e8f0;
+$slate-300: #cbd5e1;
+$slate-400: #94a3b8;
+$slate-500: #64748b;
+$slate-600: #475569;
+$slate-700: #334155;
+$slate-800: #1e293b;
+$slate-900: #0f172a;
+$slate-950: #020617;
+
+$blue-100: #dbeafe;
+$blue-500: #3b82f6;
+$blue-600: #2563eb;
+
+$green-100: #dcfce7;
+$green-500: #22c55e;
+$green-600: #16a34a;
+
+$emerald-100: #d1fae5;
+$emerald-500: #10b981;
+$emerald-600: #059669;
+
+$amber-100: #fef3c7;
+$amber-500: #f59e0b;
+$amber-600: #d97706;
+
+$red-100: #fee2e2;
+$red-500: #ef4444;
+$red-600: #dc2626;
+
+$border-radius: 6px;
+$button-border-radius: $border-radius;
+$card-border-radius: $border-radius;
+$input-border-radius: $border-radius;
+
+$primary: $slate-900;
+$secondary: $slate-700;
+$accent: $blue-500;
+$dark: $slate-900;
+$positive: $green-500;
+$negative: $red-500;
+$info: $blue-500;
+$warning: $amber-500;
+
+$shadow-1: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-2:
+  0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  0 1px 2px -1px rgba(0, 0, 0, 0.1);
+$shadow-3:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$shadow-4:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+$typography-font-family:
+  'Helvetica',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  'Fira Sans',
+  'Droid Sans',
+  'Helvetica Neue',
+  sans-serif;
