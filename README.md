@@ -1,40 +1,41 @@
-# Teste EngagED (engaged-teste)
+# Teste EngagED
 
-Teste técnico da EngagED
+Esse repositório serve como solução para o teste técnico da EngagED. Para isso, foi utilizado
+as seguintes tecnologias: Quasar, Vue 3, Typescript, [URQL](https://nearform.com/open-source/urql/), GraphQL e
+GraphQL CodeGen (para geração de tipos) e SCSS.
 
-## Install the dependencies
+## Como rodar o projeto
+
+### Instalar as dependências
+
 ```bash
-yarn
-# or
-npm install
+bun install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Pra rodar em dev mode
+
 ```bash
 quasar dev
+# ou
+bun dev
 ```
 
+### Lintar os arquivos com ESlint
 
-### Lint the files
 ```bash
-yarn lint
-# or
-npm run lint
+bun lint
 ```
 
+### Formatar com prettier
 
-### Format the files
 ```bash
-yarn format
-# or
-npm run format
+bun format
 ```
 
+### Buildar para produção
 
-### Build the app for production
 ```bash
 quasar build
+# or
+bun build
 ```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
