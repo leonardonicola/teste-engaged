@@ -14,12 +14,14 @@ import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n": typeof types.GetCharactersDocument,
-    "\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n": typeof types.CharacterDocument,
+  '\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n': typeof types.GetCharactersDocument;
+  '\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n': typeof types.CharacterDocument;
 };
 const documents: Documents = {
-    "\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n": types.GetCharactersDocument,
-    "\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n": types.CharacterDocument,
+  '\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n':
+    types.GetCharactersDocument,
+  '\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n':
+    types.CharacterDocument,
 };
 
 /**
@@ -39,14 +41,19 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n"];
+export function graphql(
+  source: '\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n',
+): (typeof documents)['\n  query GetCharacters($page: Int, $name: String) {\n    characters(page: $page, filter: { name: $name }) {\n      info {\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        image\n        status\n        species\n      }\n    }\n  }\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n"): (typeof documents)["\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n"];
+export function graphql(
+  source: '\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n',
+): (typeof documents)['\n  query Character($id: ID!) {\n    character(id: $id) {\n      id\n      name\n      image\n      status\n      species\n      gender\n      origin {\n        name\n        dimension\n      }\n      episode {\n        episode\n      }\n      location {\n        name\n        dimension\n      }\n    }\n  }\n'];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
+  TDocumentNode extends DocumentNode<infer TType, any> ? TType : never;
