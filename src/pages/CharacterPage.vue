@@ -55,21 +55,38 @@ if (error.value) {
           spinner-color="primary"
           transition="fade"
         />
-        <div class="col-5">
+        <div class="col-auto">
           <h1 class="text-h4 text-weight-bold q-mb-sm">
             {{ data.character.name }}
           </h1>
 
-          <div class="row q-gutter-sm">
-            <q-badge color="accent" outline v-if="data.character.species">{{
-              data.character.species
-            }}</q-badge>
-            <q-badge color="indigo" outline v-if="data.character.gender">{{
-              data.character.gender
-            }}</q-badge>
-            <q-badge :color="statusColor" outline v-if="data.character.status">{{
-              data.character.status
-            }}</q-badge>
+          <div class="flex q-gutter-sm">
+            <div class="column">
+              Espécie:
+              <q-badge color="accent" outline align="middle" style="width: fit-content">{{
+                data.character.species || 'Desconhecida'
+              }}</q-badge>
+            </div>
+            <div class="column">
+              Gênero:
+              <q-badge
+                color="indigo"
+                outline
+                v-if="data.character.gender"
+                style="width: fit-content"
+                >{{ data.character.gender || 'Desconhecido' }}</q-badge
+              >
+            </div>
+            <div class="column">
+              Status:
+              <q-badge
+                :color="statusColor"
+                outline
+                v-if="data.character.status"
+                style="width: fit-content"
+                >{{ data.character.status || 'Desconhecido' }}</q-badge
+              >
+            </div>
           </div>
         </div>
       </q-card-section>
