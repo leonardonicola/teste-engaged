@@ -113,7 +113,7 @@ if (error.value) {
           </q-item-section>
           <q-item-section>
             <q-item-label data-testid="episodes"
-              ><strong>Episódios:</strong>
+              ><strong>Episódios: </strong>
               <span v-if="data.character.episode.length">{{
                 data.character.episode.flatMap((ep) => ep?.episode).join(', ')
               }}</span>
