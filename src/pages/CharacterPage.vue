@@ -21,7 +21,7 @@ const statusColor = computed(() => {
     case 'Dead':
       return 'red';
     default:
-      return 'primary';
+      return 'amber';
   }
 });
 
@@ -61,9 +61,15 @@ if (error.value) {
           </h1>
 
           <div class="row q-gutter-sm">
-            <q-badge color="accent" outline>{{ data.character.species }}</q-badge>
-            <q-badge color="indigo" outline>{{ data.character.gender }}</q-badge>
-            <q-badge :color="statusColor" outline>{{ data.character.status }}</q-badge>
+            <q-badge color="accent" outline v-if="data.character.species">{{
+              data.character.species
+            }}</q-badge>
+            <q-badge color="indigo" outline v-if="data.character.gender">{{
+              data.character.gender
+            }}</q-badge>
+            <q-badge :color="statusColor" outline v-if="data.character.status">{{
+              data.character.status
+            }}</q-badge>
           </div>
         </div>
       </q-card-section>
@@ -78,7 +84,7 @@ if (error.value) {
           <q-item-section>
             <q-item-label data-testid="location"
               ><strong>Ultima localização:</strong>
-              {{ data.character.location?.name }}</q-item-label
+              {{ data.character.location?.name || 'Desconhecida' }}</q-item-label
             >
             <q-item-label caption data-testid="location-dimension"
               >Dimensão: {{ data.character.location?.dimension || 'Desconhecida' }}</q-item-label
@@ -92,10 +98,11 @@ if (error.value) {
           </q-item-section>
           <q-item-section>
             <q-item-label data-testid="origin"
-              ><strong>Origem:</strong> {{ data.character.origin?.name }}</q-item-label
+              ><strong>Origem:</strong>
+              {{ data.character.origin?.name || 'Desconhecida' }}</q-item-label
             >
             <q-item-label caption data-testid="origin-dimension"
-              >Dimensão: {{ data.character.origin?.dimension || 'Unknown' }}</q-item-label
+              >Dimensão: {{ data.character.origin?.dimension || 'Desconhecida' }}</q-item-label
             >
           </q-item-section>
         </q-item>
@@ -107,8 +114,11 @@ if (error.value) {
           <q-item-section>
             <q-item-label data-testid="episodes"
               ><strong>Episódios:</strong>
-              {{ data.character.episode.flatMap((ep) => ep?.episode).join(', ') }}</q-item-label
-            >
+              <span v-if="data.character.episode.length">{{
+                data.character.episode.flatMap((ep) => ep?.episode).join(', ')
+              }}</span>
+              <span v-else>Nenhuma participação</span>
+            </q-item-label>
           </q-item-section>
         </q-item>
       </q-card-section>
