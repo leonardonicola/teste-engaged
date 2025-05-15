@@ -1,7 +1,7 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-  schema: 'https://rickandmortyapi.com/graphql',
+  schema: process.env.API_URL ?? 'http://localhost:8000',
   documents: ['src/queries/**/*.ts'],
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
