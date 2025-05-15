@@ -5,7 +5,7 @@ const $q = useQuasar();
 </script>
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header reveal bordered>
+    <q-header reveal bordered :class="$q.dark.isActive ? '' : 'bg-white text-slate-900'">
       <q-toolbar class="q-px-xl q-py-md">
         <q-toolbar-title class="text-weight-bold">Rick and Morty Explorer</q-toolbar-title>
         <q-btn
