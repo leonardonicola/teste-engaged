@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router';
 import { useQuery } from '@urql/vue';
 import { getCharacterDetails } from 'src/queries/characters';
 import { computed } from 'vue';
-import { Notify, useMeta, useQuasar } from 'quasar';
+import { Notify, useQuasar } from 'quasar';
 
 const route = useRoute();
 const q = useQuasar();
@@ -23,10 +23,6 @@ const statusColor = computed(() => {
     default:
       return 'primary';
   }
-});
-
-useMeta({
-  titleTemplate: (title) => `${title} | ${data.value?.character?.name}`,
 });
 
 if (error.value) {
@@ -80,11 +76,11 @@ if (error.value) {
             <q-icon name="fas fa-location-dot" size="40px" />
           </q-item-section>
           <q-item-section>
-            <q-item-label
+            <q-item-label data-testid="location"
               ><strong>Ultima localização:</strong>
               {{ data.character.location?.name }}</q-item-label
             >
-            <q-item-label caption
+            <q-item-label caption data-testid="location-dimension"
               >Dimensão: {{ data.character.location?.dimension || 'Desconhecida' }}</q-item-label
             >
           </q-item-section>
@@ -95,8 +91,10 @@ if (error.value) {
             <q-icon name="fas fa-globe" size="40px" />
           </q-item-section>
           <q-item-section>
-            <q-item-label><strong>Origem:</strong> {{ data.character.origin?.name }}</q-item-label>
-            <q-item-label caption
+            <q-item-label data-testid="origin"
+              ><strong>Origem:</strong> {{ data.character.origin?.name }}</q-item-label
+            >
+            <q-item-label caption data-testid="origin-dimension"
               >Dimensão: {{ data.character.origin?.dimension || 'Unknown' }}</q-item-label
             >
           </q-item-section>
@@ -107,7 +105,7 @@ if (error.value) {
             <q-icon name="fas fa-film" size="40px" />
           </q-item-section>
           <q-item-section>
-            <q-item-label
+            <q-item-label data-testid="episodes"
               ><strong>Episódios:</strong>
               {{ data.character.episode.flatMap((ep) => ep?.episode).join(', ') }}</q-item-label
             >

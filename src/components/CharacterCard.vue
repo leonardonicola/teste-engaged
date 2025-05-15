@@ -24,8 +24,11 @@ defineProps<{
     />
 
     <q-card-section class="text-center">
-      <div class="text-subtitle1 text-weight-bold">{{ character.name }}</div>
-      <div class="text-caption">{{ character.species }} - {{ character.status }}</div>
+      <div class="text-subtitle1 text-weight-bold">{{ character.name ?? 'Desconhecido' }}</div>
+      <div class="text-caption">
+        {{ character.species ?? 'Espécie desconhecida' }} -
+        {{ character.status ?? 'Status desconhecido' }}
+      </div>
     </q-card-section>
   </q-card>
 </template>

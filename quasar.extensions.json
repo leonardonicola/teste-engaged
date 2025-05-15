@@ -1,0 +1,9 @@
+{
+  "@quasar/testing-unit-vitest": {
+    "options": []
+  },
+  "@quasar/testing-e2e-cypress": {
+    "port": "3000",
+    "options": []
+  }
+}
