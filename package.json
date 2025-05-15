@@ -13,10 +13,8 @@
     "dev": "quasar dev",
     "build": "quasar build",
     "deploy": "vercel",
-    "postinstall": "quasar prepare",
+    "postinstall": "quasar prepare && bun generate",
     "generate": "graphql-codegen --require dotenv/config --config codegen.ts",
-    "prestart": "bun generate",
-    "predev": "bun generate",
     "test:unit": "vitest",
     "test:e2e": "cross-env NODE_ENV=test TS_NODE_PROJECT=test/cypress/tsconfig.json start-test \"quasar dev\" http-get://127.0.0.1:3000 \"cypress open --e2e\""
   },
